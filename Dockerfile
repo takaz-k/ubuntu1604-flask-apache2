@@ -4,7 +4,7 @@
 FROM ubuntu:16.04
 
 ############################################
-# Proxy setting (if necessary)
+# Proxy setting (if nessesary)
 ############################################
 ENV https_proxy "http://proxy_adress:port"
 ENV http_proxy "http://proxy_adress:port"
@@ -42,7 +42,8 @@ RUN apt install -y nano sudo apache2 apache2-dev
 # distribute src
 ############################################
 ARG USER_NAME="apache"
-WORKDIR /home/apache/myapp
+RUN adduser ${USER_NAME}
+WORKDIR /home/${USER_NAME}/myapp
 COPY ./src .
 COPY ./conf /etc/apache2/sites-available
 
