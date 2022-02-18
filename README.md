@@ -6,7 +6,9 @@ Dockerが動く環境であればOKです
 
 ## Usage
 ```shell
-docker-compose up -d
+$ docker-compose build
+
+$ docker-compose up -d
 ```
 
 ブラウザ等で以下にアクセスすればApache上でFlaskアプリが動作している結果を確認できます。  
